@@ -37,6 +37,7 @@ stages:
             mavenAuthenticateFeed: false
             effectivePomSkip: false
             sonarQubeRunAnalysis: false
+            options: '-DskipTests'   
           
         # - task: CopyFiles@2
         #   inputs:
