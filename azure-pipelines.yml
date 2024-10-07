@@ -31,7 +31,9 @@ stages:
           inputs:
             mavenPomFile: 'pom.xml'
             goals: 'clean install'
-            publishJUnitResults: false
+            publishJUnitResults: true
+            testResultsFiles: '**/surefire-reports/TEST-*.xml'
+            codeCoverageToolOption: 'Cobertura'
             javaHomeOption: 'JDKVersion'
             mavenVersionOption: 'Default'
             mavenAuthenticateFeed: false
