@@ -30,23 +30,23 @@ stages:
         - task: Maven@4
           inputs:
             mavenPomFile: 'pom.xml'
-            goals: 'clean install'
-            publishJUnitResults: true
-            testResultsFiles: '**/surefire-reports/TEST-*.xml'
+            goals: 'Package'
+            publishJUnitResults: false
             codeCoverageToolOption: 'Cobertura'
             javaHomeOption: 'JDKVersion'
             mavenVersionOption: 'Default'
             mavenAuthenticateFeed: false
             effectivePomSkip: false
             sonarQubeRunAnalysis: false
-        - task: CopyFiles@2
-          inputs:
-            Contents: '**/.jar'
-            TargetFolder: '$(build.artifactstagingdirectory)'
+          
+        # - task: CopyFiles@2
+        #   inputs:
+        #     Contents: '**/.jar'
+        #     TargetFolder: '$(build.artifactstagingdirectory)'
 
-        - task: PublishBuildArtifacts@1
-          inputs:
-            PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-            ArtifactName: 'drop'
-            publishLocation: 'Container'
+        # - task: PublishBuildArtifacts@1
+        #   inputs:
+        #     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        #     ArtifactName: 'drop'
+        #     publishLocation: 'Container'
           
