@@ -30,7 +30,6 @@ stages:
         - task: Maven@4
           inputs:
             mavenPomFile: 'pom.xml'
-            goals: 'Package'
             publishJUnitResults: false
             codeCoverageToolOption: 'Cobertura'
             javaHomeOption: 'JDKVersion'
